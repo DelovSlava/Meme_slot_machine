@@ -1,8 +1,8 @@
 // Массив зображень для слотів
 const images = [
-    'image1.jpg',
-    'image2.jpg',
-    'image3.png'
+    'images/image1.jpg',
+    'images/image2.jpg',
+    'images/image3.png'
 ];
 
 // Функція для рандомного вибору зображення
@@ -30,4 +30,20 @@ function spin() {
             clearInterval(interval);
         }
     }, 100); // Інтервал між зміною зображень
+}
+
+// Функція для показу відповідної форми
+function showForm(formType) {
+    closeForm(); // Закриваємо інші форми перед відкриттям нової
+    if (formType === 'login') {
+        document.getElementById('login-form').style.display = 'flex';
+    } else if (formType === 'register') {
+        document.getElementById('register-form').style.display = 'flex';
+    }
+}
+
+// Функція для закриття форми
+function closeForm() {
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('register-form').style.display = 'none';
 }
