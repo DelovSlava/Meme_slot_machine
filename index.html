@@ -21,18 +21,39 @@
 
     <!-- Основна частина сайту -->
     <main>
-        <div class="chat-section">
-            <h3>Онлайн-чат</h3>
-            <p>Чат буде доступний пізніше...</p>
-        </div>
+
+      <!-- Контейнер для онлайн-чату -->
+      <div class="chat-container">
+          <h3>Онлайн-чат</h3>
+          <div id="chat-window" class="chat-window">
+              <!-- Повідомлення будуть з'являтися тут -->
+          </div>
+          <div class="chat-input">
+              <input type="text" id="message-input" placeholder="Введіть ваше повідомлення">
+              <button onclick="sendMessage()">Відправити</button>
+          </div>
+      </div>
+
+          <!-- Слот-машина -->
         <div class="slot-machine">
             <div class="slots">
                 <img id="slot1" src="images/image1.jpg" alt="Слот 1">
                 <img id="slot2" src="images/image2.jpg" alt="Слот 2">
                 <img id="slot3" src="images/image3.png" alt="Слот 3">
             </div>
-            <button class="spin-button" onclick="spin()">Обертати</button>
+            <!-- Поле вводу для ставки та кнопка обертання -->
+            <div class="bet-container">
+                <input type="number" id="bet-amount" placeholder="Введіть ставку" min="1">
+                <button class="spin-button" onclick="spin()">Обертати</button>
+            </div>
         </div>
+
+        <!-- Вивід статусу гри -->
+        <div class="status-panel">
+            <div id="balance-display">Баланс: <span id="balance"></span> монет</div>
+            <div id="result-message">Натисніть "Обертати" для початку гри.</div>
+        </div>
+
     </main>
 
     <!-- Форма для входу -->
